@@ -41,17 +41,21 @@ form.addEventListener("input", handelInput)
 form.addEventListener("submit", handelSubmit)
 populateText();
 function handelInput(event){
-       const key = event.target.name;
+    const key = event.target.name;
     const value = event.target.value.trim();
      formData [key] = value;
-
+  
      
     localStorage.setItem(KEY, JSON.stringify(formData));
+ if(!value){
+    event.currentTarget.reset();
+ }
  }
 
  function populateText(){
 const message = JSON.parse(localStorage.getItem(KEY)) || {};
-if(!message){
+
+if(!!message){
     input.value = message.email, 
     textarea.value = message.message
   }
@@ -68,7 +72,6 @@ if(!message){
         alert  ("Fill please all fields")
             }
       console.log(message);
-           
-    event.currentTarget.reset();
+      event.currentTarget.reset();
     localStorage.removeItem(KEY)
    }
