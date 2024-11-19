@@ -1,0 +1,34 @@
+
+
+
+
+
+.gallery{
+margin: 0 auto;
+width: 1128px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 24px;
+}
+
+.gallery-item{
+}
+
+
+.gallery-link{
+}
+.gallery-image{
+object-fit: cover;
+width: 360px;
+height: 200px;
+}
+
+.modal{
+object-fit: cover;
+width: 1112px;
+height: 640px;
+margin: 0 auto;
+
+}
