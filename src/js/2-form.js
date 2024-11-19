@@ -49,6 +49,7 @@ function handelInput(event){
     localStorage.setItem(KEY, JSON.stringify(formData));
  if(!value){
     event.currentTarget.reset();
+ 
  }
  }
 
