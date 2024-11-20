@@ -41,16 +41,17 @@ form.addEventListener("input", handelInput)
 form.addEventListener("submit", handelSubmit)
 populateText();
 function handelInput(event){
+      
     const key = event.target.name;
     const value = event.target.value.trim();
      formData [key] = value;
   
-     
+     console.log(!value);
+    
     localStorage.setItem(KEY, JSON.stringify(formData));
  if(!value){
-    event.currentTarget.reset();
- 
- }
+    form.reset()
+     };
  }
 
  function populateText(){
@@ -64,6 +65,8 @@ if(!!message){
 
 
  function handelSubmit(event){
+ 
+    
     event.preventDefault();
     const message = JSON.parse(localStorage.getItem(KEY)) || {};
      if(!message.email){
@@ -74,5 +77,4 @@ if(!!message){
             }
       console.log(message);
       event.currentTarget.reset();
-    localStorage.removeItem(KEY)
-   }
+     }
